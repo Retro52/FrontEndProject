@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
 
 import {
   BrowserRouter,
   Routes, // instead of "Switch"
   Route,
-  useParams
+  useParams,
+  Navigate
 } from "react-router-dom";
 
 
@@ -19,9 +20,10 @@ import NotFound from './components/NotFoundPage';
 import ProfilePage from './components/ProfilePage';
 import RegisterPage from './components/RegisterPage';
 import PrivateRoute from "./components/PrivateRoute";
+import GuestProfilePage from './components/GuestProfilePage';
 
 // authentification handler
-import { AuthProvider } from "./components/AuthContext";
+import { AuthContext, AuthProvider } from "./components/AuthContext";
 
 
 export default function App() {
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="/add_game" element={<NewGame />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path='/profile/:email' element={<ProfileChecker />} />
           <Route exact path='/profile' element={<PrivateRoute />}>
           <Route exact path='/profile' element={<ProfilePage />} />
           </Route>
@@ -45,4 +48,15 @@ export default function App() {
       </AuthProvider>
     </BrowserRouter>
   );
+}
+
+function ProfileChecker() {
+  const { email } = useParams();
+  const { user } = useContext(AuthContext);
+
+  if (user && user.email === email) {
+    return <Navigate to="/profile" replace />;
+  }
+
+  return <GuestProfilePage />;
 }

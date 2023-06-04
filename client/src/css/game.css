@@ -16,15 +16,16 @@ body {
   height: 100%;
   padding: 20px;
   align-items: center;
-  background-color: #3730072f;
 }
 
 .game-page .game-info {
   margin: 20px;
+  padding: 20px;
   display: flex;
+  width: 100%;
   border-radius: 10px;
   align-items: flex-start;
-  background-color: #0a030f;
+  background-color: #13051b;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -46,7 +47,7 @@ body {
 .game-page .left-column .description {
   width: 100%;
   padding: 20px;
-  min-height: 250vh;
+  min-height: 75vh;
   border-radius: 25px;
   background-color: #250535;
   box-shadow: 0 0 10px rgb(255, 255, 255);
@@ -95,4 +96,17 @@ body {
   font-size: 18px;
   margin-top: 20px;
   padding: 10px 20px;
+}
+
+.dev-item {
+  padding: 5px;
+  border-radius: 5px;
+  transform: skewX(-10deg);
+  background-color: #d9454e;
+  text-shadow: 1px 1px #333;
+}
+
+.dev-item a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }

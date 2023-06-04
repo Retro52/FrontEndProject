@@ -4,6 +4,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Check for user in localStorage when the component initializes
@@ -13,6 +14,10 @@ export const AuthProvider = ({ children }) => {
       console.log("Chached user found");
       setUser(JSON.parse(storedUser));
     }
+    else {
+      console.log("Chached user not found");
+    }
+    setLoading(false);
   }, []);
 
   const login = async (email, password) => {
@@ -40,8 +45,13 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
 
     // Remove user from localStorage
+    console.log("Chached user removed");
     localStorage.removeItem("user");
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
