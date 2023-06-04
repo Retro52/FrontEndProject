@@ -27,7 +27,7 @@ export default function GamePage() {
             {games.map((game) => (
                 <Link key={game.id} to={`/game/${game.id}`} className="card">
                     <img
-                        src={game.poster}
+                        src={game.poster_link}
                         alt="Game Poster"
                     />
                     <div className="card-content">

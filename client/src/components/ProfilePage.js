@@ -122,8 +122,10 @@ export default function ProfilePage() {
   const handleSaveAboutMe = async () => {
     await handleSaveField('AboutMe', aboutMe, 'about_me', setEditAboutMe);
   };
-
-  console.log(userData);
+  // console.log(age);
+  // console.log(name);
+  // console.log(aboutMe);
+  // console.log(userData);
 
   const getNumberOfRows = () => {
     if (!aboutMe) {
