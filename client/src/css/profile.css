@@ -1,93 +1,87 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
-}
-  
-  body {
-    background-color: #1f1f1f;
-    color: #fff;
-  }
-  
-  header {
-    background-color: #2b2b2b;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  nav li:not(:last-child) {
-    margin-right: 30px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-  }
-  
-  main {
-    padding: 40px;
-  } */
-
 .profile-page {
   padding: 40px;
-
-  color: #fff;
-  background-color: #1f1f1f;
+  color: #ffffff;
+  background-color: #22204f;
 }
 
-.profile-page .profile-container {
+.profile-container {
   display: flex;
-  flex-direction: column;
-  align-items: normal;
-
-  border: 1px solid #777;
-  background-color: #333;
-
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: flex-start; /* Align content to the top */
+  border: 1px solid #ccc;
+  background-color: #14132f;
   padding: 30px;
   margin-bottom: 40px;
   border-radius: 10px;
-  box-shadow: 5px 5px 0 #555;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.profile-page .profile-image img {
+.profile-image img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-right: 40px;
+  object-fit: cover;
 }
 
-/* Games container */
-.profile-page .games-container {
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-
-  border: 1px solid #777;
-  background-color: #333;
-
-  padding: 30px;
-  margin-bottom: 40px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0 #555;
+.profile-details {
+  flex: 1;
 }
 
-.profile-page .games-container:after {
-  content: "";
-  display: table;
-  clear: both;
+.profile-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.profile-page .games-container ul {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+.profile-details h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile-details input[type="text"],
+.profile-details input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.profile-details textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none; /* Disable manual resizing */
+  overflow: hidden; /* Hide the vertical scrollbar */
+  min-height: 50px; /* Set a minimum height */
+  white-space: pre-wrap;
+  transition: height 0.3s; /* Add a smooth transition effect */
+}
+
+
+.profile-details button {
+  margin-right: 10px;
+  margin-left: 20px;
+  padding: 8px 16px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: skewX(-10deg);
+  background-color: #d9454e;
+  text-shadow: 1px 1px #333;
+
+}
+
+.profile-details span {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.profile-details p {
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }

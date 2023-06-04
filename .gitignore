@@ -1,6 +1,7 @@
 .git/
 resources/
 *.env
+*.env
 
 # Logs
 logs

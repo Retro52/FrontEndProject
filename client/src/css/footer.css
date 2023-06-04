@@ -1,11 +1,12 @@
 .footer {
-    /* height: 200px;
-    display: flex;
-    margin-top: 0%;
-    margin-left: 10px;
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine; */
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.footer img {
+  width: 80px;
+  height: 80px;
+  object-fit: fill;
+  border-radius: 20%;
+}
